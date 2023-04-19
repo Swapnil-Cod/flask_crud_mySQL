@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee data</title>
+</head>
+<body>
+    <a href="/add">Add New Data</a>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone No</th>
+            <th>Address</th>
+        </tr>
+        {% for i in Std %}
+        <tr>
+            <td>{{i.std_id}}</td>
+            <td>{{i.std_name}}</td>
+            <td>{{i.std_phoneNo}}</td>
+            <td>{{i.std_address}}</td>
+            <td><a href="/update/{{i.std_id}}/">Update Record</a></td>
+            <td><a href="/delete/{{i.std_id}}/">Delete Record</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
